@@ -15,6 +15,11 @@
 		E89B9EA3239A532C00D1104F /* POC_AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EA2239A532C00D1104F /* POC_AccountTests.swift */; };
 		E89B9EAE239A532C00D1104F /* POC_AccountUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EAD239A532C00D1104F /* POC_AccountUITests.swift */; };
 		E89B9EBC239A540A00D1104F /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89B9EBB239A540A00D1104F /* View.xib */; };
+		E89B9EBE239A697F00D1104F /* UserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EBD239A697F00D1104F /* UserRegistrationService.swift */; };
+		E89B9EC0239A6A0C00D1104F /* RegistrationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EBF239A6A0C00D1104F /* RegistrationViewControllerTests.swift */; };
+		E89B9EC3239A6B4700D1104F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EC1239A6B4700D1104F /* RegistrationViewController.swift */; };
+		E89B9EC4239A6B4700D1104F /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89B9EC2239A6B4700D1104F /* RegistrationViewController.xib */; };
+		E89B9EC6239A796E00D1104F /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EC5239A796E00D1104F /* UserCredential.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		E89B9EAD239A532C00D1104F /* POC_AccountUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POC_AccountUITests.swift; sourceTree = "<group>"; };
 		E89B9EAF239A532C00D1104F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89B9EBB239A540A00D1104F /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		E89B9EBD239A697F00D1104F /* UserRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationService.swift; sourceTree = "<group>"; };
+		E89B9EBF239A6A0C00D1104F /* RegistrationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewControllerTests.swift; sourceTree = "<group>"; };
+		E89B9EC1239A6B4700D1104F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		E89B9EC2239A6B4700D1104F /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		E89B9EC5239A796E00D1104F /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,10 @@
 				E89B9E96239A532B00D1104F /* LaunchScreen.storyboard */,
 				E89B9E99239A532B00D1104F /* Info.plist */,
 				E89B9EBB239A540A00D1104F /* View.xib */,
+				E89B9EBD239A697F00D1104F /* UserRegistrationService.swift */,
+				E89B9EC1239A6B4700D1104F /* RegistrationViewController.swift */,
+				E89B9EC2239A6B4700D1104F /* RegistrationViewController.xib */,
+				E89B9EC5239A796E00D1104F /* UserCredential.swift */,
 			);
 			path = "POC Account";
 			sourceTree = "<group>";
@@ -113,6 +127,7 @@
 		E89B9EA1239A532C00D1104F /* POC AccountTests */ = {
 			isa = PBXGroup;
 			children = (
+				E89B9EBF239A6A0C00D1104F /* RegistrationViewControllerTests.swift */,
 				E89B9EA2239A532C00D1104F /* POC_AccountTests.swift */,
 				E89B9EA4239A532C00D1104F /* Info.plist */,
 			);
@@ -233,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89B9E98239A532B00D1104F /* LaunchScreen.storyboard in Resources */,
+				E89B9EC4239A6B4700D1104F /* RegistrationViewController.xib in Resources */,
 				E89B9EBC239A540A00D1104F /* View.xib in Resources */,
 				E89B9E95239A532B00D1104F /* Assets.xcassets in Resources */,
 			);
@@ -260,8 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89B9E90239A532700D1104F /* ViewController.swift in Sources */,
+				E89B9EC6239A796E00D1104F /* UserCredential.swift in Sources */,
 				E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */,
 				E89B9E8E239A532700D1104F /* SceneDelegate.swift in Sources */,
+				E89B9EBE239A697F00D1104F /* UserRegistrationService.swift in Sources */,
+				E89B9EC3239A6B4700D1104F /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89B9EA3239A532C00D1104F /* POC_AccountTests.swift in Sources */,
+				E89B9EC0239A6A0C00D1104F /* RegistrationViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
