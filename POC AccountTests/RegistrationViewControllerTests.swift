@@ -57,7 +57,7 @@ class RegistrationViewControllerTests: XCTestCase {
         var registerError = false
         func validate(_ email: String) throws -> Bool {
             validateEmail = email
-            if (validateError) {
+            if validateError {
                 class ValidateError: Error {}
                 throw ValidateError()
             }
@@ -65,11 +65,10 @@ class RegistrationViewControllerTests: XCTestCase {
         }
         func register(_ credential: UserCredential) throws {
             registerCredential = credential
-            if (registerError) {
+            if registerError {
                 class RegisterError: Error {}
                 throw RegisterError()
             }
         }
     }
-
 }

@@ -15,7 +15,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
-    public init(service: UserRegistrationService) {
+    init(service: UserRegistrationService) {
         self.service = service
         super.init(nibName: nil, bundle: nil)
     }
@@ -26,8 +26,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         emailTextField.delegate = self
         registerButton.isEnabled = false
     }
@@ -46,5 +44,4 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         } catch {
         }
     }
-
 }
