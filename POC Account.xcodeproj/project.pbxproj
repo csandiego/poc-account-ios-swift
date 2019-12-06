@@ -20,6 +20,10 @@
 		E89B9EC3239A6B4700D1104F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EC1239A6B4700D1104F /* RegistrationViewController.swift */; };
 		E89B9EC4239A6B4700D1104F /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89B9EC2239A6B4700D1104F /* RegistrationViewController.xib */; };
 		E89B9EC6239A796E00D1104F /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EC5239A796E00D1104F /* UserCredential.swift */; };
+		E89B9EC8239A98F200D1104F /* AuthenticationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EC7239A98F200D1104F /* AuthenticationViewControllerTests.swift */; };
+		E89B9ECA239A992200D1104F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EC9239A992200D1104F /* AuthenticationService.swift */; };
+		E89B9ECF239A9B6D00D1104F /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9ECB239A9B4B00D1104F /* AuthenticationViewController.swift */; };
+		E89B9ED0239AA52F00D1104F /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89B9ECC239A9B4B00D1104F /* AuthenticationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		E89B9EC1239A6B4700D1104F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E89B9EC2239A6B4700D1104F /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		E89B9EC5239A796E00D1104F /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
+		E89B9EC7239A98F200D1104F /* AuthenticationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewControllerTests.swift; sourceTree = "<group>"; };
+		E89B9EC9239A992200D1104F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		E89B9ECB239A9B4B00D1104F /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		E89B9ECC239A9B4B00D1104F /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,8 @@
 		E89B9E8A239A532700D1104F /* POC Account */ = {
 			isa = PBXGroup;
 			children = (
+				E89B9ECB239A9B4B00D1104F /* AuthenticationViewController.swift */,
+				E89B9ECC239A9B4B00D1104F /* AuthenticationViewController.xib */,
 				E89B9E8B239A532700D1104F /* AppDelegate.swift */,
 				E89B9E8D239A532700D1104F /* SceneDelegate.swift */,
 				E89B9E8F239A532700D1104F /* ViewController.swift */,
@@ -120,6 +130,7 @@
 				E89B9EC1239A6B4700D1104F /* RegistrationViewController.swift */,
 				E89B9EC2239A6B4700D1104F /* RegistrationViewController.xib */,
 				E89B9EC5239A796E00D1104F /* UserCredential.swift */,
+				E89B9EC9239A992200D1104F /* AuthenticationService.swift */,
 			);
 			path = "POC Account";
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 		E89B9EA1239A532C00D1104F /* POC AccountTests */ = {
 			isa = PBXGroup;
 			children = (
+				E89B9EC7239A98F200D1104F /* AuthenticationViewControllerTests.swift */,
 				E89B9EBF239A6A0C00D1104F /* RegistrationViewControllerTests.swift */,
 				E89B9EA2239A532C00D1104F /* POC_AccountTests.swift */,
 				E89B9EA4239A532C00D1104F /* Info.plist */,
@@ -247,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89B9ED0239AA52F00D1104F /* AuthenticationViewController.xib in Resources */,
 				E89B9E98239A532B00D1104F /* LaunchScreen.storyboard in Resources */,
 				E89B9EC4239A6B4700D1104F /* RegistrationViewController.xib in Resources */,
 				E89B9EBC239A540A00D1104F /* View.xib in Resources */,
@@ -279,8 +292,10 @@
 				E89B9EC6239A796E00D1104F /* UserCredential.swift in Sources */,
 				E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */,
 				E89B9E8E239A532700D1104F /* SceneDelegate.swift in Sources */,
+				E89B9ECF239A9B6D00D1104F /* AuthenticationViewController.swift in Sources */,
 				E89B9EBE239A697F00D1104F /* UserRegistrationService.swift in Sources */,
 				E89B9EC3239A6B4700D1104F /* RegistrationViewController.swift in Sources */,
+				E89B9ECA239A992200D1104F /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +305,7 @@
 			files = (
 				E89B9EA3239A532C00D1104F /* POC_AccountTests.swift in Sources */,
 				E89B9EC0239A6A0C00D1104F /* RegistrationViewControllerTests.swift in Sources */,
+				E89B9EC8239A98F200D1104F /* AuthenticationViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
