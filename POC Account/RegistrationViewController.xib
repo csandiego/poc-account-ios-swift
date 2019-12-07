@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="POC_Account" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="Dxo-fm-zrk" id="VdS-fI-3Mm"/>
+                <outlet property="notificationLabel" destination="eFa-ru-8sO" id="1c3-W6-Lyr"/>
                 <outlet property="passwordTextField" destination="pS4-d4-Ukm" id="LBT-tu-sNx"/>
                 <outlet property="registerButton" destination="pzE-ZU-jfa" id="SdF-e6-DiG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -37,6 +38,12 @@
                         <action selector="register:" destination="-1" eventType="touchUpInside" id="hfo-EB-xfN"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFa-ru-8sO">
+                    <rect key="frame" x="163" y="804" width="88" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -46,6 +53,8 @@
                 <constraint firstItem="pzE-ZU-jfa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="C43-gH-DDX"/>
                 <constraint firstItem="pS4-d4-Ukm" firstAttribute="top" secondItem="Dxo-fm-zrk" secondAttribute="bottom" constant="32" id="Eaz-W6-nfg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pS4-d4-Ukm" secondAttribute="trailing" constant="16" id="I1m-BN-EV0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eFa-ru-8sO" secondAttribute="bottom" constant="37" id="SKW-kZ-qGl"/>
+                <constraint firstItem="eFa-ru-8sO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="bNf-nO-7hS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dxo-fm-zrk" secondAttribute="trailing" constant="16" id="ebO-Pg-Syu"/>
                 <constraint firstItem="pS4-d4-Ukm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="hIP-mq-OBt"/>
             </constraints>

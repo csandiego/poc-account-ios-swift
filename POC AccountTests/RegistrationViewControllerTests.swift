@@ -21,32 +21,53 @@ class RegistrationViewControllerTests: XCTestCase {
         _ = controller.view
     }
 
-    func testGivenEmailWhenEmailEnteredThenValidateEmail() {
+    func testGivenAnyEmailWhenEmailEnteredThenValidateEmail() {
+        service.validateError = false
         controller.emailTextField.text = credential.email
         controller.textFieldDidEndEditing(controller.emailTextField)
         XCTAssertEqual(credential.email, service.validateEmail)
     }
     
-    func testGivenInvalidEmailWhenEmailEnteredThenDisableRegisterButton() {
-        service.validateResult = false
+    func testGivenAnyEmailWhenServiceResultInvalidThenDisableRegisterButton() {
+        service.validateResult = true
+        service.validateError = false
         controller.emailTextField.text = credential.email
+        controller.textFieldDidEndEditing(controller.emailTextField)
+        service.validateResult = false
+        controller.emailTextField.text = "prefix" + credential.email
         controller.textFieldDidEndEditing(controller.emailTextField)
         XCTAssertFalse(controller.registerButton.isEnabled)
     }
     
-    func testGivenValidEmailWhenEmailEnteredThenEnableRegisterButton() {
+    func testGivenAnyEmailWhenServiceResultValidThenEnableRegisterButton() {
         service.validateResult = true
+        service.validateError = false
         controller.emailTextField.text = credential.email
         controller.textFieldDidEndEditing(controller.emailTextField)
         XCTAssertTrue(controller.registerButton.isEnabled)
     }
     
-    func testGivenValidEmailAndPasswordWhenRegisterThenRegisterUserCredential() {
-        service.validateResult = true
+    func testGivenServiceIssuesWhenValidateThenShowNotification() {
+        service.validateError = true
+        controller.emailTextField.text = credential.email
+        controller.textFieldDidEndEditing(controller.emailTextField)
+        XCTAssertFalse(controller.notificationLabel.isHidden)
+    }
+    
+    func testGivenValidEmailWhenRegisterThenRegisterUserCredential() {
+        service.registerError = false
         controller.emailTextField.text = credential.email
         controller.passwordTextField.text = credential.password
         controller.register(controller.registerButton!)
         XCTAssertEqual(credential, service.registerCredential)
+    }
+    
+    func testGivenServiceIssuesWhenRegisterThenShowNotification() {
+        service.registerError = true
+        controller.emailTextField.text = credential.email
+        controller.passwordTextField.text = credential.password
+        controller.register(controller.registerButton!)
+        XCTAssertFalse(controller.notificationLabel.isHidden)
     }
     
     private class TestUserRegistrationService: UserRegistrationService {
