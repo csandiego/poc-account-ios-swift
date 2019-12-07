@@ -7,10 +7,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthenticationViewController" customModule="POC_AccountTests" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthenticationViewController" customModule="POC_Account" customModuleProvider="target">
             <connections>
                 <outlet property="authenticateButton" destination="kmq-By-3PF" id="xfc-hn-gda"/>
                 <outlet property="emailTextField" destination="cFR-4P-7Aj" id="BTy-mm-Tn8"/>
+                <outlet property="notificationLabel" destination="fZ0-WG-vN2" id="VQn-il-jDt"/>
                 <outlet property="passwordTextField" destination="6OK-Bl-Ggg" id="Vnb-zt-o2H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,15 +38,23 @@
                         <action selector="authenticate:" destination="-1" eventType="touchUpInside" id="gBi-h9-u59"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZ0-WG-vN2">
+                    <rect key="frame" x="163" y="825" width="88" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="kmq-By-3PF" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="7WO-aH-waX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6OK-Bl-Ggg" secondAttribute="trailing" constant="16" id="8q3-jr-eeB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fZ0-WG-vN2" secondAttribute="bottom" constant="16" id="FEh-8J-oIz"/>
                 <constraint firstItem="6OK-Bl-Ggg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Mf4-PL-JNL"/>
                 <constraint firstItem="6OK-Bl-Ggg" firstAttribute="top" secondItem="cFR-4P-7Aj" secondAttribute="bottom" constant="32" id="PfY-k9-bxr"/>
                 <constraint firstItem="kmq-By-3PF" firstAttribute="top" secondItem="6OK-Bl-Ggg" secondAttribute="bottom" constant="32" id="Px2-Zi-Wp0"/>
                 <constraint firstItem="cFR-4P-7Aj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="UzU-2M-ufk"/>
+                <constraint firstItem="fZ0-WG-vN2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VG0-Zm-crP"/>
                 <constraint firstItem="cFR-4P-7Aj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="lUP-31-7Ql"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cFR-4P-7Aj" secondAttribute="trailing" constant="16" id="nTt-1u-Mz0"/>
             </constraints>

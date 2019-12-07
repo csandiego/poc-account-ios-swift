@@ -14,6 +14,7 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var authenticateButton: UIButton!
+    @IBOutlet weak var notificationLabel: UILabel!
     
     init(service: AuthenticationService) {
         self.service = service
@@ -26,12 +27,18 @@ class AuthenticationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        notificationLabel.isHidden = true
     }
 
     @IBAction func authenticate(_ sender: Any) {
         do {
             _ = try service.authenticate(UserCredential(email: emailTextField.text!, password: passwordTextField.text!))
         } catch {
+            notificationLabel.text = "Authentication Failed"
+            notificationLabel.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.notificationLabel.isHidden = true
+            }
         }
     }
 }

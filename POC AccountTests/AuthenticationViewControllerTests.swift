@@ -21,11 +21,20 @@ class AuthenticationViewControllerTests: XCTestCase {
         _ = controller.view
     }
     
-    func testGivenEmailAndPasswordWhenAuthenticateButtonClickedThenAuthenticateUserCredential() {
+    func testGivenUserCredentialWhenAuthenticateThenAuthenticateUserCredential() {
+        service.authenticateError = false
         controller.emailTextField.text = credential.email
         controller.passwordTextField.text = credential.password
         controller.authenticate(controller.authenticateButton!)
         XCTAssertEqual(credential, service.authenticateCredential)
+    }
+    
+    func testGivenServiceIssuesWhenAuthenticateThenShowNotification() {
+        service.authenticateError = true
+        controller.emailTextField.text = credential.email
+        controller.passwordTextField.text = credential.password
+        controller.authenticate(controller.authenticateButton!)
+        XCTAssertFalse(controller.notificationLabel.isHidden)
     }
 
     private class TestAuthenticationService: AuthenticationService {
