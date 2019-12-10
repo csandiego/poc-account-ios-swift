@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9E8B239A532700D1104F /* AppDelegate.swift */; };
-		E89B9E8E239A532700D1104F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9E8D239A532700D1104F /* SceneDelegate.swift */; };
 		E89B9E95239A532B00D1104F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89B9E94239A532B00D1104F /* Assets.xcassets */; };
 		E89B9E98239A532B00D1104F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89B9E96239A532B00D1104F /* LaunchScreen.storyboard */; };
 		E89B9EAE239A532C00D1104F /* POC_AccountUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EAD239A532C00D1104F /* POC_AccountUITests.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		E89B9E88239A532700D1104F /* POC Account.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POC Account.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89B9E8B239A532700D1104F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E89B9E8D239A532700D1104F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E89B9E94239A532B00D1104F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E89B9E97239A532B00D1104F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E89B9E99239A532B00D1104F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				E89B9E8B239A532700D1104F /* AppDelegate.swift */,
-				E89B9E8D239A532700D1104F /* SceneDelegate.swift */,
 				E8DF00FF239F8F0800198AEB /* HomeViewController.swift */,
 				E8DF0100239F8F0800198AEB /* HomeViewController.xib */,
 				E89B9E94239A532B00D1104F /* Assets.xcassets */,
@@ -290,7 +287,6 @@
 			files = (
 				E89B9EC6239A796E00D1104F /* UserCredential.swift in Sources */,
 				E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */,
-				E89B9E8E239A532700D1104F /* SceneDelegate.swift in Sources */,
 				E8DF00F8239F79D800198AEB /* AuthenticationContext.swift in Sources */,
 				E8DF0101239F8F0800198AEB /* HomeViewController.swift in Sources */,
 				E89B9EBE239A697F00D1104F /* UserRegistrationService.swift in Sources */,
@@ -394,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -448,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
