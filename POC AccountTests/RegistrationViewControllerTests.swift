@@ -22,36 +22,59 @@ class RegistrationViewControllerTests: XCTestCase {
     }
 
     func testGivenAnyEmailWhenEmailEnteredThenValidateEmail() {
+        service.validateResult = false
         service.validateError = false
         controller.emailTextField.text = credential.email
         controller.textFieldDidEndEditing(controller.emailTextField)
         XCTAssertEqual(credential.email, service.validateEmail)
     }
     
-    func testGivenAnyEmailWhenServiceResultInvalidThenDisableRegisterButton() {
-        service.validateResult = true
-        service.validateError = false
-        controller.emailTextField.text = credential.email
-        controller.textFieldDidEndEditing(controller.emailTextField)
-        service.validateResult = false
-        controller.emailTextField.text = "prefix" + credential.email
-        controller.textFieldDidEndEditing(controller.emailTextField)
-        XCTAssertFalse(controller.registerButton.isEnabled)
-    }
-    
-    func testGivenAnyEmailWhenServiceResultValidThenEnableRegisterButton() {
-        service.validateResult = true
-        service.validateError = false
-        controller.emailTextField.text = credential.email
-        controller.textFieldDidEndEditing(controller.emailTextField)
-        XCTAssertTrue(controller.registerButton.isEnabled)
-    }
-    
     func testGivenServiceIssuesWhenValidateThenShowNotification() {
+        service.validateResult = false
         service.validateError = true
         controller.emailTextField.text = credential.email
         controller.textFieldDidEndEditing(controller.emailTextField)
         XCTAssertFalse(controller.notificationLabel.isHidden)
+    }
+    
+    func testWhenEmailInvalidAndPasswordEmptyThenDisableRegisterButton() {
+        service.validateResult = false
+        service.validateError = false
+        controller.emailTextField.text = credential.email
+        controller.textFieldDidEndEditing(controller.emailTextField)
+        controller.passwordTextField.text = ""
+        controller.textFieldDidEndEditing(controller.passwordTextField)
+        XCTAssertFalse(controller.registerButton.isEnabled)
+    }
+    
+    func testWhenEmailInvalidAndPasswordNotEmptyThenDisableRegisterButton() {
+        service.validateResult = false
+        service.validateError = false
+        controller.emailTextField.text = credential.email
+        controller.textFieldDidEndEditing(controller.emailTextField)
+        controller.passwordTextField.text = credential.password
+        controller.textFieldDidEndEditing(controller.passwordTextField)
+        XCTAssertFalse(controller.registerButton.isEnabled)
+    }
+    
+    func testWhenEmailValidAndPasswordEmptyThenDisableRegisterButton() {
+        service.validateResult = true
+        service.validateError = false
+        controller.emailTextField.text = credential.email
+        controller.textFieldDidEndEditing(controller.emailTextField)
+        controller.passwordTextField.text = ""
+        controller.textFieldDidEndEditing(controller.passwordTextField)
+        XCTAssertFalse(controller.registerButton.isEnabled)
+    }
+    
+    func testWhenEmailValidAndPasswordNotEmptyThenEnabledRegisterButton() {
+        service.validateResult = true
+        service.validateError = false
+        controller.emailTextField.text = credential.email
+        controller.textFieldDidEndEditing(controller.emailTextField)
+        controller.passwordTextField.text = credential.password
+        controller.textFieldDidEndEditing(controller.passwordTextField)
+        XCTAssertTrue(controller.registerButton.isEnabled)
     }
     
     func testGivenValidEmailWhenRegisterThenRegisterUserCredential() {
@@ -60,6 +83,9 @@ class RegistrationViewControllerTests: XCTestCase {
         controller.passwordTextField.text = credential.password
         controller.register(controller.registerButton!)
         XCTAssertEqual(credential, service.registerCredential)
+    }
+    
+    func testGivenValidEmailWhenRegisterThenNavigateUp() {
     }
     
     func testGivenServiceIssuesWhenRegisterThenShowNotification() {

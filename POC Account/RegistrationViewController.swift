@@ -11,6 +11,7 @@ import UIKit
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     private let service: UserRegistrationService
+    private var isEmailValid = false
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -28,16 +29,25 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
+        passwordTextField.delegate = self
         registerButton.isEnabled = false
         notificationLabel.isHidden = true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        do {
-            registerButton.isEnabled = try service.validate(emailTextField.text!)
-        } catch {
-            showNotification("Validation Failed")
+        if textField == emailTextField {
+            if let email = emailTextField.text {
+                do {
+                    isEmailValid = try service.validate(email)
+                } catch {
+                    isEmailValid = false
+                    showNotification("Validation Failed")
+                }
+            } else {
+                isEmailValid = false
+            }
         }
+        registerButton.isEnabled = isEmailValid && !(passwordTextField.text?.isEmpty ?? false)
     }
 
     @IBAction func register(_ sender: Any) {
