@@ -24,6 +24,10 @@
 		E89B9ECA239A992200D1104F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9EC9239A992200D1104F /* AuthenticationService.swift */; };
 		E89B9ECF239A9B6D00D1104F /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9ECB239A9B4B00D1104F /* AuthenticationViewController.swift */; };
 		E89B9ED0239AA52F00D1104F /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89B9ECC239A9B4B00D1104F /* AuthenticationViewController.xib */; };
+		E8DF00F8239F79D800198AEB /* AuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF00F7239F79D800198AEB /* AuthenticationContext.swift */; };
+		E8DF00FB239F7B3D00198AEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF00F9239F7B3D00198AEB /* LoginViewController.swift */; };
+		E8DF00FC239F7B3D00198AEB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8DF00FA239F7B3D00198AEB /* LoginViewController.xib */; };
+		E8DF00FE239F7FCA00198AEB /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF00FD239F7FC900198AEB /* LoginViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		E89B9EC9239A992200D1104F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		E89B9ECB239A9B4B00D1104F /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E89B9ECC239A9B4B00D1104F /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
+		E8DF00F7239F79D800198AEB /* AuthenticationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationContext.swift; sourceTree = "<group>"; };
+		E8DF00F9239F7B3D00198AEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E8DF00FA239F7B3D00198AEB /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		E8DF00FD239F7FC900198AEB /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +139,9 @@
 				E89B9EC2239A6B4700D1104F /* RegistrationViewController.xib */,
 				E89B9EC5239A796E00D1104F /* UserCredential.swift */,
 				E89B9EC9239A992200D1104F /* AuthenticationService.swift */,
+				E8DF00F7239F79D800198AEB /* AuthenticationContext.swift */,
+				E8DF00F9239F7B3D00198AEB /* LoginViewController.swift */,
+				E8DF00FA239F7B3D00198AEB /* LoginViewController.xib */,
 			);
 			path = "POC Account";
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 				E89B9EBF239A6A0C00D1104F /* RegistrationViewControllerTests.swift */,
 				E89B9EA2239A532C00D1104F /* POC_AccountTests.swift */,
 				E89B9EA4239A532C00D1104F /* Info.plist */,
+				E8DF00FD239F7FC900198AEB /* LoginViewControllerTests.swift */,
 			);
 			path = "POC AccountTests";
 			sourceTree = "<group>";
@@ -261,6 +273,7 @@
 			files = (
 				E89B9ED0239AA52F00D1104F /* AuthenticationViewController.xib in Resources */,
 				E89B9E98239A532B00D1104F /* LaunchScreen.storyboard in Resources */,
+				E8DF00FC239F7B3D00198AEB /* LoginViewController.xib in Resources */,
 				E89B9EC4239A6B4700D1104F /* RegistrationViewController.xib in Resources */,
 				E89B9EBC239A540A00D1104F /* View.xib in Resources */,
 				E89B9E95239A532B00D1104F /* Assets.xcassets in Resources */,
@@ -293,8 +306,10 @@
 				E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */,
 				E89B9E8E239A532700D1104F /* SceneDelegate.swift in Sources */,
 				E89B9ECF239A9B6D00D1104F /* AuthenticationViewController.swift in Sources */,
+				E8DF00F8239F79D800198AEB /* AuthenticationContext.swift in Sources */,
 				E89B9EBE239A697F00D1104F /* UserRegistrationService.swift in Sources */,
 				E89B9EC3239A6B4700D1104F /* RegistrationViewController.swift in Sources */,
+				E8DF00FB239F7B3D00198AEB /* LoginViewController.swift in Sources */,
 				E89B9ECA239A992200D1104F /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8DF00FE239F7FCA00198AEB /* LoginViewControllerTests.swift in Sources */,
 				E89B9EA3239A532C00D1104F /* POC_AccountTests.swift in Sources */,
 				E89B9EC0239A6A0C00D1104F /* RegistrationViewControllerTests.swift in Sources */,
 				E89B9EC8239A98F200D1104F /* AuthenticationViewControllerTests.swift in Sources */,
