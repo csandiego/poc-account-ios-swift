@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80D31C823A02F26004BAE9C /* Schema.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D31C523A02F26004BAE9C /* Schema.grpc.swift */; };
+		E80D31C923A02F26004BAE9C /* Schema.proto in Sources */ = {isa = PBXBuildFile; fileRef = E80D31C623A02F26004BAE9C /* Schema.proto */; };
+		E80D31CA23A02F26004BAE9C /* Schema.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D31C723A02F26004BAE9C /* Schema.pb.swift */; };
+		E80D31CC23A03172004BAE9C /* GRPCUserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */; };
+		E83C329F23A023B600D328DF /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = E83C329E23A023B600D328DF /* GRPC */; };
 		E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9E8B239A532700D1104F /* AppDelegate.swift */; };
 		E89B9E95239A532B00D1104F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89B9E94239A532B00D1104F /* Assets.xcassets */; };
 		E89B9E98239A532B00D1104F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89B9E96239A532B00D1104F /* LaunchScreen.storyboard */; };
@@ -43,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E80D31C523A02F26004BAE9C /* Schema.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.grpc.swift; sourceTree = "<group>"; };
+		E80D31C623A02F26004BAE9C /* Schema.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = Schema.proto; sourceTree = "<group>"; };
+		E80D31C723A02F26004BAE9C /* Schema.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.pb.swift; sourceTree = "<group>"; };
+		E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCUserRegistrationService.swift; sourceTree = "<group>"; };
 		E89B9E88239A532700D1104F /* POC Account.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POC Account.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89B9E8B239A532700D1104F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89B9E94239A532B00D1104F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E83C329F23A023B600D328DF /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +125,9 @@
 		E89B9E8A239A532700D1104F /* POC Account */ = {
 			isa = PBXGroup;
 			children = (
+				E80D31C523A02F26004BAE9C /* Schema.grpc.swift */,
+				E80D31C723A02F26004BAE9C /* Schema.pb.swift */,
+				E80D31C623A02F26004BAE9C /* Schema.proto */,
 				E89B9E8B239A532700D1104F /* AppDelegate.swift */,
 				E8DF00FF239F8F0800198AEB /* HomeViewController.swift */,
 				E8DF0100239F8F0800198AEB /* HomeViewController.xib */,
@@ -129,6 +142,7 @@
 				E8DF00F7239F79D800198AEB /* AuthenticationContext.swift */,
 				E8DF00F9239F7B3D00198AEB /* LoginViewController.swift */,
 				E8DF00FA239F7B3D00198AEB /* LoginViewController.xib */,
+				E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */,
 			);
 			path = "POC Account";
 			sourceTree = "<group>";
@@ -168,6 +182,9 @@
 			dependencies = (
 			);
 			name = "POC Account";
+			packageProductDependencies = (
+				E83C329E23A023B600D328DF /* GRPC */,
+			);
 			productName = "POC Account";
 			productReference = E89B9E88239A532700D1104F /* POC Account.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +257,9 @@
 				Base,
 			);
 			mainGroup = E89B9E7F239A532700D1104F;
+			packageReferences = (
+				E83C329D23A023B600D328DF /* XCRemoteSwiftPackageReference "grpc-swift" */,
+			);
 			productRefGroup = E89B9E89239A532700D1104F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,11 +306,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89B9EC6239A796E00D1104F /* UserCredential.swift in Sources */,
+				E80D31CA23A02F26004BAE9C /* Schema.pb.swift in Sources */,
 				E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */,
 				E8DF00F8239F79D800198AEB /* AuthenticationContext.swift in Sources */,
+				E80D31C923A02F26004BAE9C /* Schema.proto in Sources */,
 				E8DF0101239F8F0800198AEB /* HomeViewController.swift in Sources */,
+				E80D31C823A02F26004BAE9C /* Schema.grpc.swift in Sources */,
 				E89B9EBE239A697F00D1104F /* UserRegistrationService.swift in Sources */,
 				E89B9EC3239A6B4700D1104F /* RegistrationViewController.swift in Sources */,
+				E80D31CC23A03172004BAE9C /* GRPCUserRegistrationService.swift in Sources */,
 				E8DF00FB239F7B3D00198AEB /* LoginViewController.swift in Sources */,
 				E89B9ECA239A992200D1104F /* AuthenticationService.swift in Sources */,
 			);
@@ -614,6 +638,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E83C329D23A023B600D328DF /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = "1.0.0-alpha.7";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E83C329E23A023B600D328DF /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E83C329D23A023B600D328DF /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E89B9E80239A532700D1104F /* Project object */;
 }
