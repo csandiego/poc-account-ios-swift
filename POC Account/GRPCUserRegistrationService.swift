@@ -6,6 +6,8 @@
 //  Copyright © 2019 Christopher San Diego. All rights reserved.
 //
 
+import NIO
+
 class GRPCUserRegistrationService : UserRegistrationService {
     
     private let client: Protobuf_UserRegistrationService
@@ -14,17 +16,20 @@ class GRPCUserRegistrationService : UserRegistrationService {
         self.client = client
     }
 
-    func validate(_ email: String) throws -> Bool {
+    func validate(_ email: String) -> EventLoopFuture<Bool> {
         var request = Protobuf_ValidationRequest()
         request.email = email
-        return try client.validate(request, callOptions: nil).response.wait().valid
+        return client.validate(request, callOptions: nil).response.map { response in
+            return response.valid
+        }
     }
     
-    func register(_ credential: UserCredential) throws {
+    func register(_ credential: UserCredential) -> EventLoopFuture<Void> {
         var request = Protobuf_UserCredential()
         request.email = credential.email
         request.password = credential.password
-        _ = try client.register(request, callOptions: nil).response.wait()
+        return client.register(request, callOptions: nil).response.map { response in
+        }
     }
     
 }

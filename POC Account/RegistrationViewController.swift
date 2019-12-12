@@ -12,6 +12,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     private let service: UserRegistrationService
     private var isEmailValid = false
+    private var registrationInProgress = false
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -33,36 +34,59 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         registerButton.isEnabled = false
         notificationLabel.isHidden = true
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == emailTextField {
-            if let email = emailTextField.text {
-                do {
-                    isEmailValid = try service.validate(email)
-                } catch {
-                    isEmailValid = false
-                    showNotification("Validation Failed")
+            isEmailValid = false
+            if let email = emailTextField.text, !email.isEmpty {
+                let future = service.validate(email)
+                future.whenSuccess { valid in
+                    self.isEmailValid = valid
+                    DispatchQueue.main.async {
+                        self.updateRegisterButton()
+                    }
                 }
-            } else {
-                isEmailValid = false
+                future.whenFailure { _ in
+                    self.showNotification("Validation failed")
+                }
             }
         }
-        registerButton.isEnabled = isEmailValid && !(passwordTextField.text?.isEmpty ?? false)
+        updateRegisterButton()
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func register(_ sender: Any) {
-        do {
-            let credential = UserCredential(email: emailTextField.text!, password: passwordTextField.text!)
-            try service.register(credential)
-        } catch {
-            showNotification("Registration Failed")
+        registrationInProgress = true
+        let future = service.register(UserCredential(email: emailTextField.text!, password: passwordTextField.text!))
+        future.whenComplete { _ in
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
+        future.whenFailure { _ in
+            self.showNotification("Registraion failed")
+            self.registrationInProgress = false
+            DispatchQueue.main.async {
+                self.updateRegisterButton()
+            }
+        }
+    }
+    
+    private func updateRegisterButton() {
+        registerButton.isEnabled = isEmailValid && !(passwordTextField.text?.isEmpty ?? false) && !registrationInProgress
     }
     
     private func showNotification(_ message: String) {
-        notificationLabel.text = message
-        notificationLabel.isHidden = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        let main = DispatchQueue.main
+        main.async {
+            self.notificationLabel.text = message
+            self.notificationLabel.isHidden = false
+        }
+        main.asyncAfter(deadline: .now() + 3.0) {
             self.notificationLabel.isHidden = true
         }
     }

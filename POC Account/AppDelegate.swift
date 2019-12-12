@@ -9,7 +9,6 @@
 import UIKit
 
 import GRPC
-import NIOTransportServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func provideClientConnection() -> ClientConnection {
         return ClientConnection(configuration: ClientConnection.Configuration(
             target: .hostAndPort("192.168.2.12", 8000),
-            eventLoopGroup: NIOTSEventLoopGroup()
+            eventLoopGroup: PlatformSupport.makeEventLoopGroup(loopCount: 1, networkPreference: .userDefined(.posix))
         ))
     }
     
