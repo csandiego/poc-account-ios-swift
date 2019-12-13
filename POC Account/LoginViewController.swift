@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private let context: AuthenticationContext
+    private var loginInProgress = false
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -34,24 +35,48 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        loginButton.isEnabled = !(emailTextField.text?.isEmpty ?? false) && !(passwordTextField.text?.isEmpty ?? false)
+        updateLoginButton()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func login(_ sender: Any) {
-        do {
-            if try context.login(UserCredential(email: emailTextField.text!, password: passwordTextField.text!)) {
+        loginInProgress = true
+        let future = context.login(UserCredential(email: emailTextField.text!, password: passwordTextField.text!))
+        future.whenSuccess { valid in
+            if valid {
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             } else {
-                showNotification("Invalid Email/Password")
+                self.showNotification("Invalid username/password")
             }
-        } catch {
-            showNotification("Login Failed")
+        }
+        future.whenFailure { _ in
+            self.showNotification("Login failed")
+        }
+        future.whenComplete { _ in
+            self.loginInProgress = false
+            DispatchQueue.main.async {
+                self.updateLoginButton()
+            }
         }
     }
     
+    private func updateLoginButton() {
+        loginButton.isEnabled = !(emailTextField.text?.isEmpty ?? false) && !(passwordTextField.text?.isEmpty ?? false) && !loginInProgress
+    }
+    
     private func showNotification(_ message: String) {
-        notificationLabel.text = message
-        notificationLabel.isHidden = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        let main = DispatchQueue.main
+        main.async {
+            self.notificationLabel.text = message
+            self.notificationLabel.isHidden = false
+        }
+        main.asyncAfter(deadline: .now() + 3.0) {
             self.notificationLabel.isHidden = true
         }
     }

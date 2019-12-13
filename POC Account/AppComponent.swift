@@ -22,13 +22,20 @@ struct AppComponent: Cleanse.RootComponent {
             .to { (connection: ClientConnection) -> Protobuf_UserRegistrationService in
                 Protobuf_UserRegistrationServiceClient(connection: connection)
             }
+        binder.bind(Protobuf_AuthenticationService.self)
+            .to { (connection: ClientConnection) -> Protobuf_AuthenticationService in
+                Protobuf_AuthenticationServiceClient(connection: connection)
+            }
         binder.bind(UserRegistrationService.self).to(factory: GRPCUserRegistrationService.init)
+        binder.bind(AuthenticationService.self).to(factory: GRPCAuthenticationService.init)
+        binder.bind(AuthenticationContext.self).to(factory: DefaultAuthenticationContext.init)
+        binder.bind(RegistrationViewController.self).to(factory: RegistrationViewController.init)
     }
     
-    static func configureRoot(binder bind: ReceiptBinder<RegistrationViewController>) -> BindingReceipt<RegistrationViewController> {
-        bind.to(factory: RegistrationViewController.init)
+    static func configureRoot(binder bind: ReceiptBinder<LoginViewController>) -> BindingReceipt<LoginViewController> {
+        bind.to(factory: LoginViewController.init)
     }
     
-    typealias Root = RegistrationViewController
+    typealias Root = LoginViewController
     
 }

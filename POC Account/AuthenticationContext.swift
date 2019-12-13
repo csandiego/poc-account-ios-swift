@@ -6,11 +6,14 @@
 //  Copyright © 2019 Christopher San Diego. All rights reserved.
 //
 
+import NIO
+
 protocol AuthenticationContext {
     
     var userId: Int { get }
     
-    func login(_ credential: UserCredential) throws -> Bool
+    func login(_ credential: UserCredential) -> EventLoopFuture<Bool>
     
     func logout()
+    
 }

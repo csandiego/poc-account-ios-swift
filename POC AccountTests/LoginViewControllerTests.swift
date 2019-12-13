@@ -6,6 +6,7 @@
 //  Copyright © 2019 Christopher San Diego. All rights reserved.
 //
 
+import NIO
 import XCTest
 @testable import POC_Account
 
@@ -63,7 +64,12 @@ class LoginViewControllerTests: XCTestCase {
         controller.emailTextField.text = credential.email
         controller.passwordTextField.text = credential.password
         controller.login(controller.loginButton!)
-        XCTAssertFalse(controller.notificationLabel.isHidden)
+        let expectation = self.expectation(description: "TEST")
+        DispatchQueue.main.async {
+            XCTAssertFalse(self.controller.notificationLabel.isHidden)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
     }
     
     func testGivenServiceIssuesWhenLoginThenShowNotification() {
@@ -72,24 +78,31 @@ class LoginViewControllerTests: XCTestCase {
         controller.emailTextField.text = credential.email
         controller.passwordTextField.text = credential.password
         controller.login(controller.loginButton!)
-        XCTAssertFalse(controller.notificationLabel.isHidden)
+        let expectation = self.expectation(description: "TEST")
+        DispatchQueue.main.async {
+            XCTAssertFalse(self.controller.notificationLabel.isHidden)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
     }
     
     private class TestAuthenticationContext : AuthenticationContext {
         
+        private let eventLoop: EventLoop
         var mutableUserId = 0
         var userId: Int { return mutableUserId }
-        
         var loginCredential: UserCredential!
         var loginResult = false
         var loginError = false
-        func login(_ credential: UserCredential) throws -> Bool {
+        
+        init() {
+            eventLoop = EmbeddedEventLoop()
+        }
+        
+        func login(_ credential: UserCredential) -> EventLoopFuture<Bool> {
             loginCredential = credential
-            if loginError {
-                class LoginError: Error {}
-                throw LoginError()
-            }
-            return loginResult
+            class LoginError: Error {}
+            return loginError ? eventLoop.makeFailedFuture(LoginError()) : eventLoop.makeSucceededFuture(loginResult)
         }
         
         func logout() {
