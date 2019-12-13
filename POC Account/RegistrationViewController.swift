@@ -62,13 +62,15 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func register(_ sender: Any) {
         registrationInProgress = true
         let future = service.register(UserCredential(email: emailTextField.text!, password: passwordTextField.text!))
-        future.whenComplete { _ in
+        future.whenSuccess { _ in
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }
         }
         future.whenFailure { _ in
             self.showNotification("Registraion failed")
+        }
+        future.whenComplete { _ in
             self.registrationInProgress = false
             DispatchQueue.main.async {
                 self.updateRegisterButton()
