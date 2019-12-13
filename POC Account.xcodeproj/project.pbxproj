@@ -12,6 +12,9 @@
 		E80D31CA23A02F26004BAE9C /* Schema.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D31C723A02F26004BAE9C /* Schema.pb.swift */; };
 		E80D31CC23A03172004BAE9C /* GRPCUserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */; };
 		E83C329F23A023B600D328DF /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = E83C329E23A023B600D328DF /* GRPC */; };
+		E884FDDC23A33F1500D8A12E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884FDDB23A33F1500D8A12E /* AppComponent.swift */; };
+		E884FDDD23A33F7800D8A12E /* Cleanse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E884FDD623A339E300D8A12E /* Cleanse.framework */; };
+		E884FDDE23A33F7800D8A12E /* Cleanse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E884FDD623A339E300D8A12E /* Cleanse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B9E8B239A532700D1104F /* AppDelegate.swift */; };
 		E89B9E95239A532B00D1104F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89B9E94239A532B00D1104F /* Assets.xcassets */; };
 		E89B9E98239A532B00D1104F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89B9E96239A532B00D1104F /* LaunchScreen.storyboard */; };
@@ -31,6 +34,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E884FDD523A339E300D8A12E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E884FDCF23A339E300D8A12E /* Cleanse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6A660CA1CCB07C2004DD6E3;
+			remoteInfo = Cleanse;
+		};
+		E884FDD723A339E300D8A12E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E884FDCF23A339E300D8A12E /* Cleanse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88D6552C1F042D4300AFE00E;
+			remoteInfo = CleanseGen;
+		};
+		E884FDD923A339E300D8A12E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E884FDCF23A339E300D8A12E /* Cleanse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6A660D41CCB07C3004DD6E3;
+			remoteInfo = CleanseTests;
+		};
 		E89B9E9F239A532C00D1104F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E89B9E80239A532700D1104F /* Project object */;
@@ -47,11 +71,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E884FDDF23A33F7800D8A12E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E884FDDE23A33F7800D8A12E /* Cleanse.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E80D31C523A02F26004BAE9C /* Schema.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.grpc.swift; sourceTree = "<group>"; };
 		E80D31C623A02F26004BAE9C /* Schema.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = Schema.proto; sourceTree = "<group>"; };
 		E80D31C723A02F26004BAE9C /* Schema.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.pb.swift; sourceTree = "<group>"; };
 		E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCUserRegistrationService.swift; sourceTree = "<group>"; };
+		E884FDCF23A339E300D8A12E /* Cleanse.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cleanse.xcodeproj; path = ../Cleanse/Cleanse.xcodeproj; sourceTree = "<group>"; };
+		E884FDDB23A33F1500D8A12E /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		E89B9E88239A532700D1104F /* POC Account.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POC Account.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89B9E8B239A532700D1104F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89B9E94239A532B00D1104F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E884FDDD23A33F7800D8A12E /* Cleanse.framework in Frameworks */,
 				E83C329F23A023B600D328DF /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +143,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E884FDCE23A339E300D8A12E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E884FDCF23A339E300D8A12E /* Cleanse.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E884FDD023A339E300D8A12E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E884FDD623A339E300D8A12E /* Cleanse.framework */,
+				E884FDD823A339E300D8A12E /* CleanseGen.framework */,
+				E884FDDA23A339E300D8A12E /* CleanseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E89B9E7F239A532700D1104F = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +168,7 @@
 				E89B9EA1239A532C00D1104F /* POC AccountTests */,
 				E89B9EAC239A532C00D1104F /* POC AccountUITests */,
 				E89B9E89239A532700D1104F /* Products */,
+				E884FDCE23A339E300D8A12E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +203,7 @@
 				E8DF00F9239F7B3D00198AEB /* LoginViewController.swift */,
 				E8DF00FA239F7B3D00198AEB /* LoginViewController.xib */,
 				E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */,
+				E884FDDB23A33F1500D8A12E /* AppComponent.swift */,
 			);
 			path = "POC Account";
 			sourceTree = "<group>";
@@ -176,6 +237,7 @@
 				E89B9E84239A532700D1104F /* Sources */,
 				E89B9E85239A532700D1104F /* Frameworks */,
 				E89B9E86239A532700D1104F /* Resources */,
+				E884FDDF23A33F7800D8A12E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +324,12 @@
 			);
 			productRefGroup = E89B9E89239A532700D1104F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E884FDD023A339E300D8A12E /* Products */;
+					ProjectRef = E884FDCF23A339E300D8A12E /* Cleanse.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E89B9E87239A532700D1104F /* POC Account */,
@@ -270,6 +338,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E884FDD623A339E300D8A12E /* Cleanse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cleanse.framework;
+			remoteRef = E884FDD523A339E300D8A12E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E884FDD823A339E300D8A12E /* CleanseGen.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CleanseGen.framework;
+			remoteRef = E884FDD723A339E300D8A12E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E884FDDA23A339E300D8A12E /* CleanseTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CleanseTests.xctest;
+			remoteRef = E884FDD923A339E300D8A12E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E89B9E86239A532700D1104F /* Resources */ = {
@@ -316,6 +408,7 @@
 				E89B9EC3239A6B4700D1104F /* RegistrationViewController.swift in Sources */,
 				E80D31CC23A03172004BAE9C /* GRPCUserRegistrationService.swift in Sources */,
 				E8DF00FB239F7B3D00198AEB /* LoginViewController.swift in Sources */,
+				E884FDDC23A33F1500D8A12E /* AppComponent.swift in Sources */,
 				E89B9ECA239A992200D1104F /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
