@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +14,7 @@
                 <outlet property="loginButton" destination="Wpm-A1-48F" id="6YB-Py-pzd"/>
                 <outlet property="notificationLabel" destination="zzp-su-PYM" id="CIb-aB-Jov"/>
                 <outlet property="passwordTextField" destination="zMg-ld-QaP" id="hds-NV-u5U"/>
+                <outlet property="registerButton" destination="Uju-H6-fws" id="dfv-h8-tRr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,6 +46,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uju-H6-fws">
+                    <rect key="frame" x="178.5" y="302" width="57" height="30"/>
+                    <state key="normal" title="Register"/>
+                    <connections>
+                        <action selector="register:" destination="-1" eventType="touchUpInside" id="Qyb-Dd-ZkQ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -54,8 +63,10 @@
                 <constraint firstItem="zMg-ld-QaP" firstAttribute="top" secondItem="4Xh-j9-Gzy" secondAttribute="bottom" constant="32" id="ICY-Nk-Bcs"/>
                 <constraint firstItem="zzp-su-PYM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VDl-ac-SCe"/>
                 <constraint firstItem="4Xh-j9-Gzy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="XUq-xo-ShM"/>
+                <constraint firstItem="Uju-H6-fws" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="aAf-bX-cYM"/>
                 <constraint firstItem="4Xh-j9-Gzy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="dIv-w5-f9T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Xh-j9-Gzy" secondAttribute="trailing" constant="16" id="l0z-hH-MFQ"/>
+                <constraint firstItem="Uju-H6-fws" firstAttribute="top" secondItem="Wpm-A1-48F" secondAttribute="bottom" constant="32" id="ld7-jF-vH3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zMg-ld-QaP" secondAttribute="trailing" constant="16" id="yfI-Ej-SGd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

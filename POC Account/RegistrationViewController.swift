@@ -64,7 +64,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         let future = service.register(UserCredential(email: emailTextField.text!, password: passwordTextField.text!))
         future.whenSuccess { _ in
             DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
+                self.presentingViewController!.dismiss(animated: true)
             }
         }
         future.whenFailure { _ in

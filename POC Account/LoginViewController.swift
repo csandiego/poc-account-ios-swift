@@ -6,19 +6,23 @@
 //  Copyright © 2019 Christopher San Diego. All rights reserved.
 //
 
+import Cleanse
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private let context: AuthenticationContext
+    private let provider: Provider<RegistrationViewController>
     private var loginInProgress = false
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var notificationLabel: UILabel!
     
-    init(context: AuthenticationContext) {
+    init(context: AuthenticationContext, provider: Provider<RegistrationViewController>) {
         self.context = context
+        self.provider = provider
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,6 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        modalPresentationStyle = .fullScreen
         emailTextField.delegate = self
         passwordTextField.delegate = self
         loginButton.isEnabled = false
@@ -49,7 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         future.whenSuccess { valid in
             if valid {
                 DispatchQueue.main.async {
-                    self.navigationController?.popViewController(animated: true)
+                    self.presentingViewController!.dismiss(animated: true)
                 }
             } else {
                 self.showNotification("Invalid username/password")
@@ -64,6 +69,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.updateLoginButton()
             }
         }
+    }
+    
+    @IBAction func register(_ sender: Any) {
+        present(provider.get(), animated: true)
     }
     
     private func updateLoginButton() {

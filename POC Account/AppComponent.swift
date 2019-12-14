@@ -30,12 +30,13 @@ struct AppComponent: Cleanse.RootComponent {
         binder.bind(AuthenticationService.self).to(factory: GRPCAuthenticationService.init)
         binder.bind(AuthenticationContext.self).to(factory: DefaultAuthenticationContext.init)
         binder.bind(RegistrationViewController.self).to(factory: RegistrationViewController.init)
+        binder.bind(LoginViewController.self).to(factory: LoginViewController.init)
     }
     
-    static func configureRoot(binder bind: ReceiptBinder<LoginViewController>) -> BindingReceipt<LoginViewController> {
-        bind.to(factory: LoginViewController.init)
+    static func configureRoot(binder bind: ReceiptBinder<HomeViewController>) -> BindingReceipt<HomeViewController> {
+        bind.to(factory: HomeViewController.init)
     }
     
-    typealias Root = LoginViewController
+    typealias Root = HomeViewController
     
 }

@@ -6,25 +6,41 @@
 //  Copyright © 2019 Christopher San Diego. All rights reserved.
 //
 
+import Cleanse
 import UIKit
 
 class HomeViewController: UIViewController {
 
+    private let context: AuthenticationContext
+    private let provider: Provider<LoginViewController>
+    @IBOutlet weak var userIdLabel: UILabel!
+    
+    init(context: AuthenticationContext, provider: Provider<LoginViewController>) {
+        self.context = context
+        self.provider = provider
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        modalPresentationStyle = .fullScreen
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.isHidden = context.userId == 0
+        userIdLabel.text = String(context.userId)
     }
-    */
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if context.userId == 0 {
+            present(provider.get(), animated: true)
+        }
+    }
 
 }
