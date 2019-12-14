@@ -11,24 +11,24 @@ import GRPC
 
 struct AppComponent: Cleanse.RootComponent {
 
-    static func configure(binder: Binder<Unscoped>) {
-        binder.bind(ClientConnection.self).to { () -> ClientConnection in
+    static func configure(binder: Binder<Singleton>) {
+        binder.bind(ClientConnection.self).sharedInScope().to { () -> ClientConnection in
             ClientConnection(configuration: ClientConnection.Configuration(
                 target: .hostAndPort("192.168.2.12", 8000),
                 eventLoopGroup: PlatformSupport.makeEventLoopGroup(loopCount: 1, networkPreference: .userDefined(.posix))
             ))
         }
-        binder.bind(Protobuf_UserRegistrationService.self)
+        binder.bind(Protobuf_UserRegistrationService.self).sharedInScope()
             .to { (connection: ClientConnection) -> Protobuf_UserRegistrationService in
                 Protobuf_UserRegistrationServiceClient(connection: connection)
             }
-        binder.bind(Protobuf_AuthenticationService.self)
+        binder.bind(Protobuf_AuthenticationService.self).sharedInScope()
             .to { (connection: ClientConnection) -> Protobuf_AuthenticationService in
                 Protobuf_AuthenticationServiceClient(connection: connection)
             }
-        binder.bind(UserRegistrationService.self).to(factory: GRPCUserRegistrationService.init)
-        binder.bind(AuthenticationService.self).to(factory: GRPCAuthenticationService.init)
-        binder.bind(AuthenticationContext.self).to(factory: DefaultAuthenticationContext.init)
+        binder.bind(UserRegistrationService.self).sharedInScope().to(factory: GRPCUserRegistrationService.init)
+        binder.bind(AuthenticationService.self).sharedInScope().to(factory: GRPCAuthenticationService.init)
+        binder.bind(AuthenticationContext.self).sharedInScope().to(factory: DefaultAuthenticationContext.init)
         binder.bind(RegistrationViewController.self).to(factory: RegistrationViewController.init)
         binder.bind(LoginViewController.self).to(factory: LoginViewController.init)
     }
