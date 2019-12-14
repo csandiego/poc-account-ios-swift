@@ -21,6 +21,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     init(service: UserRegistrationService) {
         self.service = service
         super.init(nibName: nil, bundle: nil)
+        modalPresentationStyle = .fullScreen
     }
     
     required init?(coder: NSCoder) {

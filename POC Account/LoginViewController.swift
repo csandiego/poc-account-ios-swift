@@ -24,6 +24,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.context = context
         self.provider = provider
         super.init(nibName: nil, bundle: nil)
+        modalPresentationStyle = .fullScreen
     }
     
     required init?(coder: NSCoder) {
@@ -32,7 +33,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        modalPresentationStyle = .fullScreen
         emailTextField.delegate = self
         passwordTextField.delegate = self
         loginButton.isEnabled = false
