@@ -7,7 +7,6 @@
 //
 
 import Cleanse
-import GRPC
 import UIKit
 
 @UIApplicationMain
@@ -17,12 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = try! ComponentFactory.of(AppComponent.self).build(())
-        window.makeKeyAndVisible()
-        self.window = window
+        (try! ComponentFactory.of(AppComponent.self).build(())).injectProperties(into: self)
+        window!.makeKeyAndVisible()
         return true
+    }
+    
+    func injectProperties(_ window: UIWindow) {
+        self.window = window
     }
 
 }
-

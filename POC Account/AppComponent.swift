@@ -8,11 +8,12 @@
 
 import Cleanse
 import GRPC
+import UIKit
 
 struct AppComponent: Cleanse.RootComponent {
 
     static func configure(binder: Binder<Singleton>) {
-        binder.bind(ClientConnection.self).sharedInScope().to { () -> ClientConnection in
+        binder.bind().sharedInScope().to { () -> ClientConnection in
             ClientConnection(configuration: ClientConnection.Configuration(
                 target: .hostAndPort("192.168.2.12", 8000),
                 eventLoopGroup: PlatformSupport.makeEventLoopGroup(loopCount: 1, networkPreference: .userDefined(.posix))
@@ -26,17 +27,26 @@ struct AppComponent: Cleanse.RootComponent {
             .to { (connection: ClientConnection) -> Protobuf_AuthenticationService in
                 Protobuf_AuthenticationServiceClient(connection: connection)
             }
+        
         binder.bind(UserRegistrationService.self).sharedInScope().to(factory: GRPCUserRegistrationService.init)
         binder.bind(AuthenticationService.self).sharedInScope().to(factory: GRPCAuthenticationService.init)
         binder.bind(AuthenticationContext.self).sharedInScope().to(factory: DefaultAuthenticationContext.init)
-        binder.bind(RegistrationViewController.self).to(factory: RegistrationViewController.init)
-        binder.bind(LoginViewController.self).to(factory: LoginViewController.init)
+        
+        binder.bind().to(factory: RegistrationViewController.init)
+        binder.bind().to(factory: LoginViewController.init)
+        binder.bind().to(factory: HomeViewController.init)
+        
+        binder.bind().to { (root: HomeViewController) -> UIWindow in
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.rootViewController = root
+            return window
+        }
     }
     
-    static func configureRoot(binder bind: ReceiptBinder<HomeViewController>) -> BindingReceipt<HomeViewController> {
-        bind.to(factory: HomeViewController.init)
+    static func configureRoot(binder bind: ReceiptBinder<PropertyInjector<AppDelegate>>) -> BindingReceipt<PropertyInjector<AppDelegate>> {
+        bind.propertyInjector { bind in
+            bind.to(injector: AppDelegate.injectProperties)
+        }
     }
-    
-    typealias Root = HomeViewController
     
 }
