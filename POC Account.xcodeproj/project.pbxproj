@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E80D31C823A02F26004BAE9C /* Schema.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D31C523A02F26004BAE9C /* Schema.grpc.swift */; };
-		E80D31C923A02F26004BAE9C /* Schema.proto in Sources */ = {isa = PBXBuildFile; fileRef = E80D31C623A02F26004BAE9C /* Schema.proto */; };
 		E80D31CA23A02F26004BAE9C /* Schema.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D31C723A02F26004BAE9C /* Schema.pb.swift */; };
 		E80D31CC23A03172004BAE9C /* GRPCUserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */; };
 		E83C329F23A023B600D328DF /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = E83C329E23A023B600D328DF /* GRPC */; };
@@ -92,7 +91,6 @@
 
 /* Begin PBXFileReference section */
 		E80D31C523A02F26004BAE9C /* Schema.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.grpc.swift; sourceTree = "<group>"; };
-		E80D31C623A02F26004BAE9C /* Schema.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = Schema.proto; sourceTree = "<group>"; };
 		E80D31C723A02F26004BAE9C /* Schema.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.pb.swift; sourceTree = "<group>"; };
 		E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCUserRegistrationService.swift; sourceTree = "<group>"; };
 		E884FDCF23A339E300D8A12E /* Cleanse.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cleanse.xcodeproj; path = ../Cleanse/Cleanse.xcodeproj; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				E89B9E99239A532B00D1104F /* Info.plist */,
-				E80D31C623A02F26004BAE9C /* Schema.proto */,
 				E884FDDB23A33F1500D8A12E /* AppComponent.swift */,
 				E89B9E8B239A532700D1104F /* AppDelegate.swift */,
 				E8DF00F7239F79D800198AEB /* AuthenticationContext.swift */,
@@ -416,7 +413,6 @@
 				E80D31CA23A02F26004BAE9C /* Schema.pb.swift in Sources */,
 				E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */,
 				E8DF00F8239F79D800198AEB /* AuthenticationContext.swift in Sources */,
-				E80D31C923A02F26004BAE9C /* Schema.proto in Sources */,
 				E8DF0101239F8F0800198AEB /* HomeViewController.swift in Sources */,
 				E8F9945923A3AEAA0038BF72 /* DefaultAuthenticationContext.swift in Sources */,
 				E80D31C823A02F26004BAE9C /* Schema.grpc.swift in Sources */,
