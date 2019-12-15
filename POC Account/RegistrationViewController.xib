@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="POC_Account" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButton" destination="7ce-UV-CMa" id="aZh-0m-f66"/>
                 <outlet property="emailTextField" destination="Dxo-fm-zrk" id="VdS-fI-3Mm"/>
                 <outlet property="notificationLabel" destination="eFa-ru-8sO" id="1c3-W6-Lyr"/>
                 <outlet property="passwordTextField" destination="pS4-d4-Ukm" id="LBT-tu-sNx"/>
@@ -45,6 +46,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ce-UV-CMa">
+                    <rect key="frame" x="183" y="302" width="48" height="30"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="mrA-7K-eoe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -55,9 +63,11 @@
                 <constraint firstItem="pS4-d4-Ukm" firstAttribute="top" secondItem="Dxo-fm-zrk" secondAttribute="bottom" constant="32" id="Eaz-W6-nfg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pS4-d4-Ukm" secondAttribute="trailing" constant="16" id="I1m-BN-EV0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eFa-ru-8sO" secondAttribute="bottom" constant="37" id="SKW-kZ-qGl"/>
+                <constraint firstItem="7ce-UV-CMa" firstAttribute="top" secondItem="pzE-ZU-jfa" secondAttribute="bottom" constant="32" id="bEl-AS-rKg"/>
                 <constraint firstItem="eFa-ru-8sO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="bNf-nO-7hS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dxo-fm-zrk" secondAttribute="trailing" constant="16" id="ebO-Pg-Syu"/>
                 <constraint firstItem="pS4-d4-Ukm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="hIP-mq-OBt"/>
+                <constraint firstItem="7ce-UV-CMa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="zs3-dc-xrB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="141" y="142"/>

@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
         self.context = context
         self.provider = provider
         super.init(nibName: nil, bundle: nil)
+        modalPresentationStyle = .fullScreen
     }
     
     required init?(coder: NSCoder) {

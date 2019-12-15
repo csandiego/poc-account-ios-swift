@@ -16,6 +16,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var notificationLabel: UILabel!
     
     init(service: UserRegistrationService) {
@@ -77,6 +78,10 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 self.updateRegisterButton()
             }
         }
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        presentingViewController!.dismiss(animated: true)
     }
     
     private func updateRegisterButton() {
