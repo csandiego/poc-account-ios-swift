@@ -35,6 +35,12 @@
 		E8F9945423A3ACA90038BF72 /* GRPCAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9945323A3ACA90038BF72 /* GRPCAuthenticationService.swift */; };
 		E8F9945923A3AEAA0038BF72 /* DefaultAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9945823A3AEAA0038BF72 /* DefaultAuthenticationContext.swift */; };
 		E8F9945B23A3B2600038BF72 /* DefaultAuthenticationContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9945A23A3B2600038BF72 /* DefaultAuthenticationContextTests.swift */; };
+		E8FF8B7823BA0554004CE952 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E8FF8B7723BA0554004CE952 /* Apollo */; };
+		E8FF8B7A23BA0554004CE952 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = E8FF8B7923BA0554004CE952 /* ApolloWebSocket */; };
+		E8FF8B8223BA0EA1004CE952 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF8B8123BA0EA1004CE952 /* API.swift */; };
+		E8FF8B8423BA186C004CE952 /* ApolloUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF8B8323BA186C004CE952 /* ApolloUserProfileService.swift */; };
+		E8FF8B8623BA1AE9004CE952 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF8B8523BA1AE9004CE952 /* UserProfile.swift */; };
+		E8FF8B8823BA1BDF004CE952 /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF8B8723BA1BDF004CE952 /* UserProfileService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +128,12 @@
 		E8F9945323A3ACA90038BF72 /* GRPCAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCAuthenticationService.swift; sourceTree = "<group>"; };
 		E8F9945823A3AEAA0038BF72 /* DefaultAuthenticationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthenticationContext.swift; sourceTree = "<group>"; };
 		E8F9945A23A3B2600038BF72 /* DefaultAuthenticationContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthenticationContextTests.swift; sourceTree = "<group>"; };
+		E8FF8B7E23BA05FC004CE952 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		E8FF8B8023BA0DF9004CE952 /* UserProfile.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserProfile.graphql; sourceTree = "<group>"; };
+		E8FF8B8123BA0EA1004CE952 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E8FF8B8323BA186C004CE952 /* ApolloUserProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloUserProfileService.swift; sourceTree = "<group>"; };
+		E8FF8B8523BA1AE9004CE952 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		E8FF8B8723BA1BDF004CE952 /* UserProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E884FDDD23A33F7800D8A12E /* Cleanse.framework in Frameworks */,
+				E8FF8B7A23BA0554004CE952 /* ApolloWebSocket in Frameworks */,
+				E8FF8B7823BA0554004CE952 /* Apollo in Frameworks */,
 				E83C329F23A023B600D328DF /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,17 +210,23 @@
 				E89B9E99239A532B00D1104F /* Info.plist */,
 				E884FDDB23A33F1500D8A12E /* AppComponent.swift */,
 				E89B9E8B239A532700D1104F /* AppDelegate.swift */,
+				E8FF8B8323BA186C004CE952 /* ApolloUserProfileService.swift */,
+				E8FF8B8723BA1BDF004CE952 /* UserProfileService.swift */,
 				E8DF00F7239F79D800198AEB /* AuthenticationContext.swift */,
 				E89B9EC9239A992200D1104F /* AuthenticationService.swift */,
 				E8F9945823A3AEAA0038BF72 /* DefaultAuthenticationContext.swift */,
 				E8F9945323A3ACA90038BF72 /* GRPCAuthenticationService.swift */,
 				E80D31CB23A03172004BAE9C /* GRPCUserRegistrationService.swift */,
 				E8DF00FF239F8F0800198AEB /* HomeViewController.swift */,
+				E8FF8B7E23BA05FC004CE952 /* schema.json */,
+				E8FF8B8023BA0DF9004CE952 /* UserProfile.graphql */,
+				E8FF8B8123BA0EA1004CE952 /* API.swift */,
 				E8DF00F9239F7B3D00198AEB /* LoginViewController.swift */,
 				E89B9EC1239A6B4700D1104F /* RegistrationViewController.swift */,
 				E80D31C523A02F26004BAE9C /* Schema.grpc.swift */,
 				E80D31C723A02F26004BAE9C /* Schema.pb.swift */,
 				E89B9EC5239A796E00D1104F /* UserCredential.swift */,
+				E8FF8B8523BA1AE9004CE952 /* UserProfile.swift */,
 				E89B9EBD239A697F00D1104F /* UserRegistrationService.swift */,
 				E89B9E94239A532B00D1104F /* Assets.xcassets */,
 				E8DF0100239F8F0800198AEB /* HomeViewController.xib */,
@@ -246,6 +266,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E89B9EB2239A532C00D1104F /* Build configuration list for PBXNativeTarget "POC Account" */;
 			buildPhases = (
+				E8FF8B7F23BA0B54004CE952 /* Apollo CLI */,
 				E89B9E84239A532700D1104F /* Sources */,
 				E89B9E85239A532700D1104F /* Frameworks */,
 				E89B9E86239A532700D1104F /* Resources */,
@@ -258,6 +279,8 @@
 			name = "POC Account";
 			packageProductDependencies = (
 				E83C329E23A023B600D328DF /* GRPC */,
+				E8FF8B7723BA0554004CE952 /* Apollo */,
+				E8FF8B7923BA0554004CE952 /* ApolloWebSocket */,
 			);
 			productName = "POC Account";
 			productReference = E89B9E88239A532700D1104F /* POC Account.app */;
@@ -333,6 +356,7 @@
 			mainGroup = E89B9E7F239A532700D1104F;
 			packageReferences = (
 				E83C329D23A023B600D328DF /* XCRemoteSwiftPackageReference "grpc-swift" */,
+				E8FF8B7623BA0554004CE952 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = E89B9E89239A532700D1104F /* Products */;
 			projectDirPath = "";
@@ -404,15 +428,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E8FF8B7F23BA0B54004CE952 /* Apollo CLI */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo CLI";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E89B9E84239A532700D1104F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E89B9EC6239A796E00D1104F /* UserCredential.swift in Sources */,
+				E8FF8B8423BA186C004CE952 /* ApolloUserProfileService.swift in Sources */,
 				E80D31CA23A02F26004BAE9C /* Schema.pb.swift in Sources */,
 				E89B9E8C239A532700D1104F /* AppDelegate.swift in Sources */,
 				E8DF00F8239F79D800198AEB /* AuthenticationContext.swift in Sources */,
+				E8FF8B8223BA0EA1004CE952 /* API.swift in Sources */,
 				E8DF0101239F8F0800198AEB /* HomeViewController.swift in Sources */,
 				E8F9945923A3AEAA0038BF72 /* DefaultAuthenticationContext.swift in Sources */,
 				E80D31C823A02F26004BAE9C /* Schema.grpc.swift in Sources */,
@@ -421,8 +468,10 @@
 				E80D31CC23A03172004BAE9C /* GRPCUserRegistrationService.swift in Sources */,
 				E8DF00FB239F7B3D00198AEB /* LoginViewController.swift in Sources */,
 				E8F9945423A3ACA90038BF72 /* GRPCAuthenticationService.swift in Sources */,
+				E8FF8B8823BA1BDF004CE952 /* UserProfileService.swift in Sources */,
 				E884FDDC23A33F1500D8A12E /* AppComponent.swift in Sources */,
 				E89B9ECA239A992200D1104F /* AuthenticationService.swift in Sources */,
+				E8FF8B8623BA1AE9004CE952 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +806,14 @@
 				minimumVersion = "1.0.0-alpha.7";
 			};
 		};
+		E8FF8B7623BA0554004CE952 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.21.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -764,6 +821,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E83C329D23A023B600D328DF /* XCRemoteSwiftPackageReference "grpc-swift" */;
 			productName = GRPC;
+		};
+		E8FF8B7723BA0554004CE952 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8FF8B7623BA0554004CE952 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		E8FF8B7923BA0554004CE952 /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8FF8B7623BA0554004CE952 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

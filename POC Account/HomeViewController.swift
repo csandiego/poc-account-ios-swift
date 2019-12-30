@@ -12,11 +12,13 @@ import UIKit
 class HomeViewController: UIViewController {
 
     private let context: AuthenticationContext
+    private let service: UserProfileService
     private let provider: Provider<LoginViewController>
     @IBOutlet weak var userIdLabel: UILabel!
     
-    init(context: AuthenticationContext, provider: Provider<LoginViewController>) {
+    init(context: AuthenticationContext, service: UserProfileService, provider: Provider<LoginViewController>) {
         self.context = context
+        self.service = service
         self.provider = provider
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .fullScreen
@@ -28,6 +30,18 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if context.userId > 0 {
+            service.get(context.userId) { result in
+                switch result {
+                case .success(let profile):
+                    DispatchQueue.main.async {
+                        self.userIdLabel.text = profile.firstName + " " + profile.lastName
+                    }
+                case .failure:
+                    break
+                }
+            }
+        }
         view.isHidden = context.userId == 0
         userIdLabel.text = String(context.userId)
     }

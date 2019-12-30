@@ -1,0 +1,7 @@
+query UserProfile{
+  userProfile(userId: 1) {
+    userId,
+    firstName,
+    lastName
+  }
+}

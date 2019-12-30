@@ -6,6 +6,7 @@
 //  Copyright © 2019 Christopher San Diego. All rights reserved.
 //
 
+import Apollo
 import Cleanse
 import GRPC
 import UIKit
@@ -27,10 +28,15 @@ struct AppComponent: Cleanse.RootComponent {
             .to { (connection: ClientConnection) -> Protobuf_AuthenticationService in
                 Protobuf_AuthenticationServiceClient(connection: connection)
             }
+        binder.bind(ApolloClient.self).sharedInScope()
+            .to { () -> ApolloClient in
+                ApolloClient(url: URL(string: "http://192.168.2.12:8080/graphql")!)
+            }
         
         binder.bind(UserRegistrationService.self).sharedInScope().to(factory: GRPCUserRegistrationService.init)
         binder.bind(AuthenticationService.self).sharedInScope().to(factory: GRPCAuthenticationService.init)
         binder.bind(AuthenticationContext.self).sharedInScope().to(factory: DefaultAuthenticationContext.init)
+        binder.bind(UserProfileService.self).sharedInScope().to(factory: ApolloUserProfileService.init)
         
         binder.bind().to(factory: RegistrationViewController.init)
         binder.bind().to(factory: LoginViewController.init)
